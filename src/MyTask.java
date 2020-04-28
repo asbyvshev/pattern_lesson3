@@ -4,7 +4,7 @@ import persistens.MainEntity;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Task extends MainEntity implements ICreator {
+public class MyTask extends MainEntity implements ICreator {
 
     private String description;
     private boolean done;
@@ -40,8 +40,8 @@ public class Task extends MainEntity implements ICreator {
     }
 
     @Override
-    public void add(Object o) {
-        checklists.add(o);
+    public void add() {
+        checklists.add(new Checklist("Список"));
     }
 
     @Override

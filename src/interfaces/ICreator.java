@@ -1,6 +1,6 @@
 package interfaces;
 
 public interface ICreator {
-    void add(Object o);
+    void add();
     void remove(Object o);
 }

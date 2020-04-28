@@ -12,8 +12,15 @@ public class Checklist extends MainEntity implements ICreator {
     }
 
     @Override
-    public void add(Object o) {
-        checklist.add(o);
+    public void add() {
+        checklist.add(new Element());
+    }
+
+    public Checklist(String name) {
+        setName(name);
+    }
+
+    public Checklist() {
     }
 
     @Override

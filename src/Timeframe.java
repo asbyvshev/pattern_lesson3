@@ -1,7 +1,7 @@
 public class Timeframe {
 
     private Long id;
-    private String data;
+    private String data = "дата";
     private String notify;
 
     public Long getId() {
