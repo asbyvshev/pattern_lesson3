@@ -40,6 +40,15 @@ public class MyTask extends MainEntity implements ICreator {
     }
 
     @Override
+    public String toString() {
+        return "MyTask{" +
+                "description='" + description + '\'' +
+                ", checklists=" + checklists +
+                ", timeframe=" + timeframe +
+                '}';
+    }
+
+    @Override
     public void add() {
         checklists.add(new Checklist("Список"));
     }

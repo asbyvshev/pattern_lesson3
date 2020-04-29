@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Checklist extends MainEntity implements ICreator {
-    List checklist = new LinkedList<>();
+    List<Element> checklist = new LinkedList<>();
 
     public Element find(String name){
         return null;
@@ -18,6 +18,15 @@ public class Checklist extends MainEntity implements ICreator {
 
     public Checklist(String name) {
         setName(name);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Element element:checklist) {
+            stringBuilder.append(element.getName() + " ");
+        }
+        return stringBuilder.toString();
     }
 
     public Checklist() {

@@ -8,6 +8,11 @@ public class Timeframe {
         return id;
     }
 
+    @Override
+    public String toString() {
+        return data + " " + notify;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
