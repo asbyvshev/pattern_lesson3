@@ -25,10 +25,18 @@ public class Column extends MainEntity implements ICreator {
         System.out.println(stringBuilder);
     }
 
+    public Column(String name) {
+        setName(name);
+    }
+
+    public Column() {
+    }
+
     @Override
     public void add() {
         taskList.add(taskBuilder.createNewTask()
-                                .description("Задача")
+                                .name()
+                                .description("Описание: Сделать что-то.")
                                 .checklist()
                                 .timeframe("выполнить до такой-то даты")
         .getTask());

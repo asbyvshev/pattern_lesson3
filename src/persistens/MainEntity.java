@@ -1,5 +1,7 @@
 package persistens;
 
+
+
 public abstract class MainEntity {
     private Long id;
     private String name;

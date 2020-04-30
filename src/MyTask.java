@@ -15,10 +15,6 @@ public class MyTask extends MainEntity implements ICreator {
         return timeframe;
     }
 
-    public void setTimeframe(Timeframe timeframe) {
-        this.timeframe = timeframe;
-    }
-
     public List getChecklists() {
         return checklists;
     }
@@ -27,12 +23,16 @@ public class MyTask extends MainEntity implements ICreator {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public boolean isDone() {
         return done;
+    }
+
+    public void setTimeframe(Timeframe timeframe) {
+        this.timeframe = timeframe;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setDone(boolean done) {
@@ -41,7 +41,7 @@ public class MyTask extends MainEntity implements ICreator {
 
     @Override
     public String toString() {
-        return "MyTask{" +
+        return getName() +"{" +
                 "description='" + description + '\'' +
                 ", checklists=" + checklists +
                 ", timeframe=" + timeframe +
