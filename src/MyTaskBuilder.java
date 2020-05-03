@@ -1,3 +1,5 @@
+import interfaces.Observer;
+
 public class MyTaskBuilder extends TaskBuilder {
     static int count = 0;
 
@@ -21,8 +23,8 @@ public class MyTaskBuilder extends TaskBuilder {
     }
 
     @Override
-    public TaskBuilder timeframe(String data) {
-        task.setTimeframe(new Timeframe());
+    public TaskBuilder timeframe(Observer observer, String data) {
+        task.setTimeframe(new Timeframe(observer));
         return this;
     }
 }

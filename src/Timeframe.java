@@ -1,8 +1,19 @@
-public class Timeframe {
+import interfaces.Observer;
+import persistens.SubjectObservations;
+
+import java.util.Date;
+
+public class Timeframe extends SubjectObservations {
 
     private Long id;
-    private String data = "дата";
+    private Date dataCreate;
+    private Date dataExecution;
     private String notify;
+
+    public Timeframe(Observer observer) {
+        this.dataCreate = new Date();
+        attach(observer);
+    }
 
     public Long getId() {
         return id;
@@ -10,19 +21,23 @@ public class Timeframe {
 
     @Override
     public String toString() {
-        return data + " " + notify;
+        return dataCreate.toString() + " " + notify;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getData() {
-        return data;
+    public Date getDataCreate() {
+        return dataCreate;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public Date getDataExecution() {
+        return dataExecution;
+    }
+
+    public void setDataExecution(Date dataExecution) {
+        this.dataExecution = dataExecution;
     }
 
     public String getNotify() {
@@ -31,5 +46,17 @@ public class Timeframe {
 
     public void setNotify(String notify) {
         this.notify = notify;
+    }
+    public boolean verifyDeadlines(){
+
+        long currentDate = new Date().getTime();
+        long untilTheEnd = dataExecution.getTime() - currentDate;
+
+        if (untilTheEnd > 0){
+            return false;
+        }
+
+        notify("We're past deadline!");
+        return true;
     }
 }

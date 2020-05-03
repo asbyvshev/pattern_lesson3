@@ -1,4 +1,5 @@
 import interfaces.ICreator;
+import interfaces.Observer;
 import persistens.MainEntity;
 
 import java.util.LinkedList;
@@ -25,6 +26,10 @@ public class Column extends MainEntity implements ICreator {
         System.out.println(stringBuilder);
     }
 
+    public List<MyTask> getTaskList() {
+        return taskList;
+    }
+
     public Column(String name) {
         setName(name);
     }
@@ -32,14 +37,23 @@ public class Column extends MainEntity implements ICreator {
     public Column() {
     }
 
+
     @Override
     public void add() {
         taskList.add(taskBuilder.createNewTask()
                                 .name()
                                 .description("Описание: Сделать что-то.")
                                 .checklist()
-                                .timeframe("выполнить до такой-то даты")
         .getTask());
+    }
+
+    public void add(Observer observer) {
+        taskList.add(taskBuilder.createNewTask()
+                .name()
+                .description("Описание: Сделать что-то.")
+                .checklist()
+                .timeframe(observer,"какая-то дата")
+                .getTask());
     }
 
     @Override
