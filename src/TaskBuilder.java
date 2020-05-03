@@ -10,6 +10,7 @@ public abstract class TaskBuilder {
         task = new MyTask();
         return this;
     }
+    public abstract TaskBuilder name();
     public abstract TaskBuilder description(String description);
     public abstract TaskBuilder checklist();
     public abstract TaskBuilder timeframe(String data);
