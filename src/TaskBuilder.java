@@ -1,3 +1,4 @@
+import interfaces.Observer;
 
 public abstract class TaskBuilder {
     protected  MyTask task;
@@ -13,5 +14,5 @@ public abstract class TaskBuilder {
     public abstract TaskBuilder name();
     public abstract TaskBuilder description(String description);
     public abstract TaskBuilder checklist();
-    public abstract TaskBuilder timeframe(String data);
+    public abstract TaskBuilder timeframe(Observer observer, String data);
 }
